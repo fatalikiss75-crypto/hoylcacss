@@ -1,7 +1,6 @@
 package ru.nbk.menus.menu.impl.version.v1_21_R1;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftInventory;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -10,8 +9,6 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import ru.nbk.menus.menu.Menu;
 import ru.nbk.menus.menu.MenuItem;
-import ru.nbk.menus.menu.reflection.ReflectionUtil;
-import ru.nbk.rolecases.misc.Messages;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +19,7 @@ import java.util.function.Consumer;
 public class MenuImpl implements Menu {
 
     private Inventory inventory;
+    private String title;
     private Map<Integer, MenuItem> items = new HashMap<>();
     private String cooldownType = "LOCAL";
     private int cooldownTime = 10;
@@ -35,19 +33,22 @@ public class MenuImpl implements Menu {
 
     public MenuImpl(){
         this.inventory = Bukkit.createInventory(null, 9);
+        this.title = "";
     }
 
     public MenuImpl(int size){
         this.inventory = Bukkit.createInventory(null, size);
+        this.title = "";
     }
 
     public MenuImpl(String name){
         this.inventory = Bukkit.createInventory(null, 9, name);
+        this.title = name;
     }
 
     public MenuImpl(InventoryType type){
         this.inventory = Bukkit.createInventory(null, type);
-
+        this.title = "";
     }
 
     public MenuImpl cloneForPlayer(Player player) {
@@ -59,10 +60,12 @@ public class MenuImpl implements Menu {
 
     public MenuImpl(int size, String name){
         this.inventory = Bukkit.createInventory(null, size, name);
+        this.title = name;
     }
 
     public MenuImpl(InventoryType type, String name){
         this.inventory = Bukkit.createInventory(null, type, name);
+        this.title = name;
     }
 
     @Override
@@ -72,7 +75,7 @@ public class MenuImpl implements Menu {
 
     @Override
     public String getName() {
-        return String.valueOf(ReflectionUtil.getFieldValue("title", ((CraftInventory) inventory).getInventory()));
+        return title;
     }
 
     @Override

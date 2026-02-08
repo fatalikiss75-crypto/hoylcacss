@@ -1,6 +1,5 @@
 package ru.nbk.rolecases.animation;
 
-import net.minecraft.server.v1_21_R1.*;
 import org.bukkit.*;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -110,7 +109,7 @@ public class CircleAnimation implements Animation {
 
             @Override
             public void run() {
-                caseLocation.getWorld().spawnParticle(Particle.SPELL_WITCH, pivot.clone().add(0, 0.2, 0), 5);
+                caseLocation.getWorld().spawnParticle(Particle.WITCH, pivot.clone().add(0, 0.2, 0), 5);
                 counter--;
                 if (counter < 0) {
                     this.cancel();
@@ -358,18 +357,10 @@ public class CircleAnimation implements Animation {
     private void sendChestAnimation(Block block, boolean open) {
         if (!(block.getType().name().contains("CHEST"))) return;
 
-        net.minecraft.server.v1_21_R1.World nmsWorld = ((CraftWorld) block.getWorld()).getHandle();
-        BlockPosition blockPosition = new BlockPosition(block.getX(), block.getY(), block.getZ());
+        net.minecraft.server.level.ServerLevel nmsWorld = ((org.bukkit.craftbukkit.v1_21_R1.CraftWorld) block.getWorld()).getHandle();
+        net.minecraft.core.BlockPos blockPosition = new net.minecraft.core.BlockPos(block.getX(), block.getY(), block.getZ());
 
-        IBlockData iBlockData = nmsWorld.getType(blockPosition);
-        net.minecraft.server.v1_21_R1.Block nmsBlock = iBlockData.getBlock();
-
-        ClientboundBlockEntityDataPacket animationPacket = new ClientboundBlockEntityDataPacket(blockPosition, nmsBlock, 1, open ? 1 : 0);
-        block.getWorld().getPlayers().forEach(player -> {
-            PlayerConnection connection = ((CraftPlayer) player).getHandle().playerConnection;
-            if (connection != null)
-                connection.sendPacket(animationPacket);
-        });
+        nmsWorld.blockEvent(blockPosition, nmsWorld.getBlockState(blockPosition).getBlock(), 1, open ? 1 : 0);
     }
 
     private float directionToYaw(BlockFace direction) {
@@ -433,7 +424,7 @@ public class CircleAnimation implements Animation {
         if (!randomRewards) {
             return gameCase.getRewards();
         } else {
-            List<Reward> result = gameCase.getRewards();
+            List<Reward> result = new ArrayList<>(gameCase.getRewards());
             Collections.shuffle(result);
             return result;
         }
