@@ -1,0 +1,77 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
+plugins {
+    java
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+}
+
+group = "ru.nbk"
+version = "1.21.11"
+
+description = "HolyCases - Плагин на кейсы с донатом для Minecraft 1.21+"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+}
+
+dependencies {
+    // Spigot API для 1.21.1+
+    compileOnly("org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT")
+
+    // PlaceholderAPI (опционально)
+    compileOnly("me.clip:placeholderapi:2.11.6")
+
+    // HikariCP для работы с MySQL
+    implementation("com.zaxxer:HikariCP:5.1.0")
+
+    // JDBI для работы с базой данных
+    implementation("org.jdbi:jdbi3-core:3.45.1")
+    implementation("org.jdbi:jdbi3-caffeine-cache:3.45.1")
+    implementation("org.jdbi:jdbi3-sqlobject:3.45.1")
+
+    // Caffeine для кэширования
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
+
+    // JSON
+    implementation("org.json:json:20240303")
+
+    // Apache HttpClient
+    implementation("org.apache.httpcomponents:httpclient:4.5.14")
+}
+
+tasks {
+    compileJava {
+        options.encoding = "UTF-8"
+        options.release.set(17)
+    }
+
+    shadowJar {
+        archiveClassifier.set("")
+        archiveFileName.set("${project.name}-${project.version}.jar")
+
+        minimize()
+
+        exclude("META-INF/*.SF")
+        exclude("META-INF/*.DSA")
+        exclude("META-INF/*.RSA")
+        exclude("module-info.class")
+
+        relocate("com.zaxxer", "ru.nbk.rolecases.libs.hikari")
+        relocate("org.jdbi", "ru.nbk.rolecases.libs.jdbi")
+        relocate("com.github.benmanes", "ru.nbk.rolecases.libs.caffeine")
+        relocate("org.json", "ru.nbk.rolecases.libs.json")
+        relocate("org.apache", "ru.nbk.rolecases.libs.apache")
+    }
+
+    build {
+        dependsOn(shadowJar)
+    }
+}

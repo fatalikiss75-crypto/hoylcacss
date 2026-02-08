@@ -1,8 +1,8 @@
 name: HolyCases
 version: 1.21.11
 main: ru.nbk.rolecases.HolyCases
-api-version: 1.21
-description: "Плагин HolyCases (в предыдущем RoleCases) является точной копией плагина на кейсы проекта HolyWorld. Плагин предоставляет возможность игрокам открывать кейсы и получать за это награды."
+api-version: '1.21'
+description: "Плагин HolyCases для кейсов с донатом на серверах Minecraft 1.21+"
 softdepend: [PlaceholderAPI]
 authors:
   - NBK
@@ -12,3 +12,13 @@ commands:
   holycases:
     aliases:
       - hc
+    description: Главная команда плагина HolyCases
+    usage: /holycases [give|take|setitem|givecase|remcase|reload|keys|giveallkeys]
+    permission: holycases.admin
+permissions:
+  holycases.admin:
+    description: Доступ к админ-командам плагина
+    default: op
+  holycases.use:
+    description: Доступ к открытию кейсов
+    default: true
