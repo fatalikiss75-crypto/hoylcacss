@@ -148,7 +148,7 @@ public class CustomArmorStand extends EntityArmorStand {
     }
 
     private void sendPacket(Packet<?> packet) {
-        world.getPlayers().forEach(entityHuman -> ((EntityPlayer) entityHuman).playerConnection.sendPacket(packet));
+        world.getPlayers().forEach(entityHuman -> ((EntityPlayer) entityHuman).connection.sendPacket(packet));
     }
 
     private Vector3f toNMS(EulerAngle old) {
@@ -161,7 +161,7 @@ public class CustomArmorStand extends EntityArmorStand {
         ClientboundSetEquipmentPacket equipmentPacket = new ClientboundSetEquipmentPacket(getId(), List.of(Pair.of(EnumItemSlot.HEAD, getEquipment(EnumItemSlot.HEAD))));
         ClientboundTeleportEntityPacket teleportPacket = new ClientboundTeleportEntityPacket(this);
 
-        PlayerConnection connection = ((CraftPlayer) player).getHandle().playerConnection;
+        PlayerConnection connection = ((CraftPlayer) player).getHandle().connection;
         connection.sendPacket(spawnPacket);
         connection.sendPacket(metadataPacket);
         connection.sendPacket(equipmentPacket);
