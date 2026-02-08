@@ -3,8 +3,6 @@ package ru.nbk.rolecases.misc;
 
 import java.util.*;
 
-import org.apache.commons.lang.ArrayUtils;
-
 public class RandomCollection<E> {
     private final NavigableMap<Double, E> map = new TreeMap<>();
     private final Random random;

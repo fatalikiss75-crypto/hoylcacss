@@ -75,7 +75,7 @@ public class CasePlaceholder extends PlaceholderExpansion
             }
 
             CompletableFuture<Integer> keys = plugin.getKeysC(player, caseName);
-            return String.valueOf(keys);
+            return String.valueOf(keys.join());
         }
 
         return "Плейсхлдер не найден";
