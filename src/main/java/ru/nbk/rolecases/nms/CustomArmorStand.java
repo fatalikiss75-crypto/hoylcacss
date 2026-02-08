@@ -1,6 +1,6 @@
 package ru.nbk.rolecases.nms;
 
-import com.mojang.datafixers.util.Pair;
+import ru.nbk.rolecases.util.Pair;
 import net.minecraft.core.Rotations;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;

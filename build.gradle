@@ -20,12 +20,13 @@ repositories {
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
     maven { url 'https://repo.codemc.io/repository/maven-public/' }
+    maven { url 'https://libraries.minecraft.net/' }
+    maven { url 'https://maven.enginehub.org/v1snapshots' }
 }
 
 dependencies {
-    // Spigot API для 1.21.1+
-    compileOnly 'org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT'
-    compileOnly 'org.spigotmc:spigot:1.21.1-R0.1-SNAPSHOT'
+    // Spigot API
+    compileOnly 'org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT'
 
     // PlaceholderAPI (опционально)
     compileOnly 'me.clip:placeholderapi:2.11.6'
@@ -52,9 +53,6 @@ dependencies {
 
     // Commons Lang3
     implementation 'org.apache.commons:commons-lang3:3.17.0'
-
-    // Datafixers (for Mojang Pair)
-    implementation 'com.mojang:datafixers:1.0.10'
 }
 
 tasks {

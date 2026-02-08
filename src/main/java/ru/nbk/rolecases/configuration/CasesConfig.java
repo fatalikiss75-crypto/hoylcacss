@@ -1,6 +1,6 @@
 package ru.nbk.rolecases.configuration;
 
-import com.mojang.datafixers.util.Pair;
+import ru.nbk.rolecases.util.Pair;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.*;
 import org.bukkit.block.Block;
