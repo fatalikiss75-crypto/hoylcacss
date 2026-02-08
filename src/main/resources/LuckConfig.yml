@@ -1,0 +1,15 @@
+lucks:
+  no_luck:
+    history: "Без удачи"
+    replace: "&fБонус к удаче не активен"
+    prize_message: ""
+
+  luck15:
+    history: "+15%"
+    replace: "&fБонус к удаче: &a+15% &7(на &6%count% &7след. кейса)"
+    prize_message: "&fУдача: &a+15% &7|&r"
+
+  luck30:
+    history: "+30%"
+    replace: "&fБонус к удаче: &a+30% &7(на &6%count% &7след. кейса)"
+    prize_message: "&fУдача: &a+30% &7|&r"

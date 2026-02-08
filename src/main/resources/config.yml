@@ -1,0 +1,3 @@
+server_name: 'TestServer'
+
+database: yaml # sql, yaml

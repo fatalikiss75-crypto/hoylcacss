@@ -1,0 +1,395 @@
+cases:
+  example:
+    title-above-case: '&#c88123К&#cd7c24е&#d27825й&#d77326с &#dc6e27с &#e16a28д&#e66529о&#eb612aн&#f05c2bа&#f5572cт&#fa532dо&#ff4e2eм'
+    title-above-case-y-offset: 1.0
+    luck_work: true
+    circle-animation:
+      random-rewards: false
+      reward-radius: 1.5
+      chest-open-sound: BLOCK_CHEST_OPEN
+      chest-close-sound: BLOCK_CHEST_CLOSE
+      start:
+        delay: 20
+        spawn-interval: 20
+      open:
+        reward-up-ticks: 40
+        rotate-into-place-angle: 12.0
+      spin:
+        start-angle-per-tick: 12.0
+        minimal-angle-per-tick: 2.0
+        minimum-slowdown-ticks: 140
+        maximum-slowdown-ticks: 140
+        minimum-idle-ticks: 0
+        maximum-idle-ticks: 0
+      end:
+        delay: 60
+        down-ticks: 10
+        rotate-into-place-angle: 10.0
+    spinning-animation:
+      lift-height: 2.0
+      lift-duration: 40
+      spin-duration: 80
+      change-interval: 20
+      drop-duration: 40
+      lift-sound: BLOCK_ANVIL_LAND
+      drop-sound: ENTITY_PLAYER_LEVELUP
+    animation:
+      type: circle
+    messages:
+      case-already-opening:
+        - Кто-то уже открывает кейс
+      not-have-keys-for-case:
+        - У вас нет ключа от этого кейса
+    locations: []
+    prize-messages:
+      - '----------'
+      - ' %player_name% выиграл %prize_name%'
+      - '%luck% &7Покупка кейсов здесь: &bXromoWorld.ru'
+      - '----------'
+    open:
+      type: key
+    rewards:
+      griefer:
+        material: PINK_SHULKER_BOX
+        name: '&#4498DBК&#4498DBр&#4498DBе&#4498DBс&#4498DBт&#4498DBь&#4498DBя&#4498DBн&#4498DBи&#4498DBн'
+        glow: true
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: false
+        add-to-history: false
+        prizes:
+          first-prize:
+            name: '&#4498DBК&#4498DBр&#4498DBе&#4498DBс&#4498DBт&#4498DBь&#4498DBя&#4498DBн&#4498DBи&#4498DBн &7(1 мес.)'
+            title:
+              title: "Вам выпало: &#4498DBК&#4498DBр&#4498DBе&#4498DBс&#4498DBт&#4498DBь&#4498DBя&#4498DBн&#4498DBи&#4498DBн &7(1 мес.)"
+              subtitle: "Поздравляем!"
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#4498DBК&#4498DBр&#4498DBе&#4498DBс&#4498DBт&#4498DBь&#4498DBя&#4498DBн&#4498DBи&#4498DBн &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#4498DBК&#4498DBр&#4498DBе&#4498DBс&#4498DBт&#4498DBь&#4498DBя&#4498DBн&#4498DBи&#4498DBн &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      mustang:
+        material: YELLOW_SHULKER_BOX
+        name: '&#C6DEF1С&#AABCCAа&#8E9AA3п&#71777Cо&#555555ж&#7C8583н&#A2B4B0и&#C9E4DEк'
+        glow: true
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: false
+        add-to-history: false
+        prizes:
+          first-prize:
+            name: '&#C6DEF1С&#AABCCAа&#8E9AA3п&#71777Cо&#555555ж&#7C8583н&#A2B4B0и&#C9E4DEк &7(1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#C6DEF1С&#AABCCAа&#8E9AA3п&#71777Cо&#555555ж&#7C8583н&#A2B4B0и&#C9E4DEк &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#C6DEF1С&#AABCCAа&#8E9AA3п&#71777Cо&#555555ж&#7C8583н&#A2B4B0и&#C9E4DEк &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      ghast:
+        material: BLUE_SHULKER_BOX
+        name: '&#FCD05CМ&#FCD05Cа&#FCD05Cн&#FCD05Cи&#FCD05Cо&#FCD05Cн'
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: false
+        add-to-history: true
+        prizes:
+          first-prize:
+            name: '&#FCD05CМ&#FCD05Cа&#FCD05Cн&#FCD05Cи&#FCD05Cо&#FCD05Cн &7 (1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#FCD05CМ&#FCD05Cа&#FCD05Cн&#FCD05Cи&#FCD05Cо&#FCD05Cн &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#FCD05CМ&#FCD05Cа&#FCD05Cн&#FCD05Cи&#FCD05Cо&#FCD05Cн &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      wither:
+        material: ORANGE_SHULKER_BOX
+        name: '&#DBCDF0H&#DBCDF0a&#DBCDF0s&#DBCDF0l&#DBCDF0e&#DBCDF0r'
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: false
+        add-to-history: true
+        prizes:
+          first-prize:
+            name: '&#DBCDF0H&#DBCDF0a&#DBCDF0s&#DBCDF0l&#DBCDF0e&#DBCDF0r &7(1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#DBCDF0H&#DBCDF0a&#DBCDF0s&#DBCDF0l&#DBCDF0e&#DBCDF0r &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#DBCDF0H&#DBCDF0a&#DBCDF0s&#DBCDF0l&#DBCDF0e&#DBCDF0r &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      kraken:
+        material: GREEN_SHULKER_BOX
+        name: '&#F2C6DEД&#C7BBDDо&#9BAFDDм&#70A4DCи&#4498DBн&#4498DBа&#4498DBй&#4498DBд'
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: false
+        add-to-history: true
+        prizes:
+          first-prize:
+            name: '&#F2C6DEД&#C7BBDDо&#9BAFDDм&#70A4DCи&#4498DBн&#4498DBа&#4498DBй&#4498DBд &7(1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#F2C6DEД&#C7BBDDо&#9BAFDDм&#70A4DCи&#4498DBн&#4498DBа&#4498DBй&#4498DBд &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#F2C6DEД&#C7BBDDо&#9BAFDDм&#70A4DCи&#4498DBн&#4498DBа&#4498DBй&#4498DBд &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      dragon:
+        material: PURPLE_SHULKER_BOX
+        name: '&#F66E00Х&#F66E00а&#F66E00н&#F66E00т&#F66E00е&#F66E00р'
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: true
+        add-to-history: true
+        prizes:
+          first-prize:
+            name: '&#F66E00Х&#F66E00а&#F66E00н&#F66E00т&#F66E00е&#F66E00р &7(1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#F66E00Х&#F66E00а&#F66E00н&#F66E00т&#F66E00е&#F66E00р &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#F66E00Х&#F66E00а&#F66E00н&#F66E00т&#F66E00е&#F66E00р &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      stinger:
+        material: RED_SHULKER_BOX
+        name: '&#E70F0FГ&#EB270Bо&#EF3F08с&#F25604у&#F66E00д&#F66E00а&#F66E00р&#F66E00ь'
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: true
+        add-to-history: true
+        prizes:
+          first-prize:
+            name: '&#E70F0FГ&#EB270Bо&#EF3F08с&#F25604у&#F66E00д&#F66E00а&#F66E00р&#F66E00ь &7(1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#E70F0FГ&#EB270Bо&#EF3F08с&#F25604у&#F66E00д&#F66E00а&#F66E00р&#F66E00ь &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#E70F0FГ&#EB270Bо&#EF3F08с&#F25604у&#F66E00д&#F66E00а&#F66E00р&#F66E00ь &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+      eternity:
+        material: MAGENTA_SHULKER_BOX
+        name: '&#FF00FF&l«ᴇᴛᴇʀɴɪᴛʏ»'
+        chances:
+          no_luck: 12.5
+          luck15: 14
+          luck30: 17
+        send-title: true
+        add-to-history: true
+        prizes:
+          first-prize:
+            name: '&#FF00FF&l«ᴇᴛᴇʀɴɪᴛʏ» &7(1 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          second-prize:
+            name: '&#FF00FF&l«ᴇᴛᴇʀɴɪᴛʏ» &7(3 мес.)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+          third-prize:
+            name: '&#FF00FF&l«ᴇᴛᴇʀɴɪᴛʏ» &7(навсегда)'
+            commands:
+              - op %player_name%
+            chances:
+              no_luck: 33.3
+              luck15: 40
+              luck30: 50
+    particles:
+      flame:
+        particle: FLAME
+        count: 15
+        speed: 0.05
+        xOffset: 0.5
+        yOffset: 0.5
+        zOffset: 0.5
+      redstone:
+        particle: REDSTONE
+        count: 15
+        speed: 0.2
+        xOffset: 0.5
+        yOffset: 0.5
+        zOffset: 0.5
+        r: 108
+        g: 192
+        b: 196
+    menu:
+      title: '&#c88123К&#cd7c24е&#d27825й&#d77326с &#dc6e27с &#e16a28д&#e66529о&#eb612aн&#f05c2bа&#f5572cт&#fa532dо&#ff4e2eм'
+      size: 54
+      cooldown:
+        type: GLOBAL # GlOBAL - для всех игроков, LOCAL - для каждого игрока отдельно
+        time: 20 # в тиках
+      item-types:
+        O:
+          material: AIR
+        X:
+          material: ORANGE_STAINED_GLASS_PANE
+          name: ' '
+        P:
+          material: PAPER
+          name: '&#c88123К&#cd7c24е&#d27825й&#d77326с &#dc6e27с &#e16a28д&#e66529о&#eb612aн&#f05c2bа&#f5572cт&#fa532dо&#ff4e2eм
+            &8(описание и цены)'
+          lore:
+            - '&fЦены на кейсы с донатом:'
+            - '&e1 кейс &7- от &f99 р.&7 (99р/шт)'
+        C:
+          material: CHEST
+          name: '&6&lОткрыть кейс'
+          lore:
+            - '&fКоличество кейсов:&#ff0000 %player_keys%'
+            - '%lucks%'
+            - '&fНажмите чтобы открыть кейс'
+        W:
+          material: ARROW
+          name: '&6Последние выигрыши'
+          lore:
+            - '&6>'
+            - '&6>'
+            - '&6>'
+      last-rewards:
+        item-name: '%player_name% выйграл %prize_name%'
+        item-lore:
+          - '&6 '
+          - 'Удача: %luck%'
+          - 'Дата: %date%'
+          - 'Сервер: %server_name%'
+          - '&6 '
+          - Проверь и ты свою удачу!
+      inventory:
+        - X X X X X X X X X
+        - X O O O O O O O X
+        - X O O O C O O O X
+        - X O O O O O O P X
+        - X X X X X X X X X
+        - W O O O O O O O O

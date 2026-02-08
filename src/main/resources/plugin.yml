@@ -1,0 +1,14 @@
+name: HolyCases
+version: 1.21.11
+main: ru.nbk.rolecases.HolyCases
+api-version: 1.21
+description: "Плагин HolyCases (в предыдущем RoleCases) является точной копией плагина на кейсы проекта HolyWorld. Плагин предоставляет возможность игрокам открывать кейсы и получать за это награды."
+softdepend: [PlaceholderAPI]
+authors:
+  - NBK
+  - itzHiti
+  - KoroLKotov
+commands:
+  holycases:
+    aliases:
+      - hc
